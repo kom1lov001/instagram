@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-// import AuthModal from "../views/AuthModal.vue";
+import ProfileView from "../views/ProfileView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,11 +10,11 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    // {
-    //   path: "/modal",
-    //   name: "modal",
-    //   component: AuthModal,
-    // },
+    {
+      path: "/profile/:users",
+      name: "profile",
+      component: ProfileView,
+    },
   ],
 });
 
