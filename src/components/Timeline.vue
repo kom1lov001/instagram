@@ -1,5 +1,5 @@
 <template>
-  <Container class="">
+  <Container>
     <div class="flex flex-col md:flex-row flex-wrap gap-3">
       <Card v-for="post of data" :key="post.id" :post="post" />
     </div>

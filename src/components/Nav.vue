@@ -17,8 +17,6 @@
             ></AInputSearch>
           </div>
           <div class="left-content">
-            <!-- <AButton type="primary">Signup</AButton> -->
-            <!-- <AButton type="primary">Login</AButton> -->
             <div v-if="!isAuthenticated" class="flex gap-3">
               <AuthModal :isLogin="false" />
               <AuthModal :isLogin="true" />
@@ -35,16 +33,23 @@
   </ALayout>
 </template>
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute, useRouter } from "vue-router";
 import Container from "@/components/Container.vue";
 import AuthModal from "./AuthModal.vue";
 import { ref } from "vue";
 let searchUserName = ref("");
+const route = useRoute();
+const router = useRouter();
 let isAuthenticated = ref(false);
 
-function onSearch() {}
+function onSearch() {
+  if (searchUserName.value) {
+    router.push(`/profile/${searchUserName.value}`);
+    searchUserName.value = "";
+  }
+}
 </script>
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;

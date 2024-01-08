@@ -10,7 +10,7 @@
           <AInput
             id="userName"
             type="text"
-            v-model:value="value"
+            v-model:value="user_name"
             placeholder="User Name"
             >User Name</AInput
           >
@@ -21,7 +21,7 @@
           <AInput
             placeholder="Email"
             type="email"
-            v-model:value="value"
+            v-model:value="emails"
             id="email"
           ></AInput>
         </div>
@@ -30,7 +30,7 @@
           <AInput
             placeholder="Password"
             type="password"
-            v-model:value="value"
+            v-model:value="passwords"
             id="password"
             >Password</AInput
           >
@@ -41,13 +41,22 @@
 </template>
 <script setup>
 import { ref, defineProps } from "vue";
+import { useUserStore } from "@/stores/users";
+
 let props = defineProps(["isLogin"]);
+let userStore = useUserStore();
+let { handleSignup, errorMessage } = userStore;
 
 const title = props.isLogin ? "Login" : "Signup";
-const user_name = ref("");
-const emails = ref("");
-const passwords = ref("");
-const open = ref(false);
+let user_name = ref("");
+let emails = ref("");
+let passwords = ref("");
+let open = ref(false);
+// let userCredentials = reactive({
+//   username: "",
+//   email: "",
+//   password: "",
+// });
 
 const showModal = () => {
   open.value = true;
