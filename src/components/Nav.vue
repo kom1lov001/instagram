@@ -1,6 +1,6 @@
 <template>
   <ALayout class="layout dark:bg-[#001529] bg-gray-400">
-    <ALayoutHeader :style="{ lineHeight: '64px' }">
+    <ALayoutHeader>
       <Container>
         <div class="nav-container">
           <div class="right-content">

@@ -1,10 +1,10 @@
 <template>
-  <div class="pb-[75px] items-center">
+  <div class="pb-[75px]">
     <div class="top">
       <!-- <ATypographyTitle :level="2">Iaithharb</ATypographyTitle> -->
       <h1>Iaithharb</h1>
     </div>
-    <div class="bottom flex items-center flex-row gap-4">
+    <div class="flex text-center flex-row gap-4 items-start">
       <!-- <ATypographyTitle :level="5">Iaithharb</ATypographyTitle>
       <ATypographyTitle :level="5">Iaithharb</ATypographyTitle>
       <ATypographyTitle :level="5">Iaithharb</ATypographyTitle> -->

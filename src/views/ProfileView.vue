@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:bg-[#001529] bg-gray-400 w-full h-[100vh]">
+  <div class="dark:bg-[#001529] bg-gray-600 w-full h-[100%]">
     <Profile />
   </div>
 </template>
