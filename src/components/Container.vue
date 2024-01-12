@@ -1,12 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container md:max-w-[90%] w-[90%]">
     <slot></slot>
   </div>
 </template>
 <script></script>
 <style scoped>
 .container {
-  width: 1000px;
   margin: 0 auto;
 }
 </style>
