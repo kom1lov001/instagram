@@ -1,8 +1,8 @@
 import { ref } from "vue";
 import { defineStore } from "pinia";
 import { supabase } from "@/superbase";
-// import userStore= useUserStore()
-export const useUserStore = defineStore("users", () => {
+// import useStore= useruseStore()
+export const useruseStore = defineStore("users", () => {
   let user = ref(null);
   let errorMessage = ref("");
   const loading = ref(false);

@@ -74,12 +74,12 @@
 import { useRoute, useRouter } from "vue-router";
 import Container from "@/components/Container.vue";
 import AuthModal from "./AuthModal.vue";
-import { useUserStore } from "../stores/users";
+import { useruseStore } from "../stores/users";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
 
 // const { user } = storeToRefs(useStore);
-let useStore = useUserStore();
+let useStore = useruseStore();
 const { user, loadingUser } = storeToRefs(useStore);
 const router = useRouter();
 const searchUsername = ref("");
@@ -129,13 +129,13 @@ const goToUsersProfile = () => {
 import { RouterLink, useRouter } from "vue-router";
 import Container from "./Container.vue";
 import AuthModal from "./AuthModal.vue";
-import { useUserStore } from "../stores/users";
+import { useruseStore } from "../stores/users";
 import { ref } from "vue";
 import { storeToRefs } from "pinia";
 
-const userStore = useUserStore();
+const useStore = useruseStore();
 
-const { user, loadingUser } = storeToRefs(userStore);
+const { user, loadingUser } = storeToRefs(useStore);
 const router = useRouter();
 const searchUsername = ref("");
 
@@ -147,7 +147,7 @@ const onSearch = () => {
 };
 
 const handleLogout = async () => {
-  await userStore.handleLogout();
+  await useStore.handleLogout();
 };
 
 const goToUsersProfile = () => {

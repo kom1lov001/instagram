@@ -60,13 +60,13 @@
 </template>
 <script setup>
 import { ref, defineProps, reactive } from "vue";
-import { useUserStore } from "@/stores/users";
+import { useruseStore } from "@/stores/users";
 import { storeToRefs } from "pinia";
 
 let props = defineProps(["isLogin"]);
-let userStore = useUserStore();
+let useStore = useruseStore();
 
-const { errorMessage, loading, user } = storeToRefs(userStore);
+const { errorMessage, loading, user } = storeToRefs(useStore);
 // getters
 const title = props.isLogin ? "Login" : "Signup";
 let open = ref(false);
@@ -79,20 +79,20 @@ let userCredentials = reactive({
 // Function
 const showModal = () => {
   open.value = true;
-  // userStore.getUser();
+  // useStore.getUser();
 };
 const clearUserCredentialsInput = () => {
   userCredentials.username = "";
   userCredentials.email = "";
   userCredentials.password = "";
-  userStore.clearErrorMessage();
+  useStore.clearErrorMessage();
 };
 // const handleOk = async (e) => {
 // if(props.isLogin){
 
 // }
-//   await userStore.handleSignup(userCredentials);
-//   // userStore.handleLogin (userCredentials);
+//   await useStore.handleSignup(userCredentials);
+//   // useStore.handleLogin (userCredentials);
 //   if (user.value) {
 //     clearUserCredentialsInput();
 //     open.value = false;
@@ -105,12 +105,12 @@ const clearUserCredentialsInput = () => {
 // };
 // const handleOk = async (e) => {
 //   if (props.isLogin) {
-//     await userStore.handleLogin({
+//     await useStore.handleLogin({
 //       password: userCredentials.password,
 //       email: userCredentials.email,
 //     });
 //   } else {
-//     await userStore.handleSignup(userCredentials);
+//     await useStore.handleSignup(userCredentials);
 //   }
 
 //   if (user.value) {
@@ -121,12 +121,12 @@ const clearUserCredentialsInput = () => {
 
 const handleOk = async (e) => {
   if (props.isLogin) {
-    await userStore.handleLogin({
+    await useStore.handleLogin({
       password: userCredentials.password,
       email: userCredentials.email,
     });
   } else {
-    await userStore.handleSignup(userCredentials);
+    await useStore.handleSignup(userCredentials);
   }
 
   if (user.value) {
@@ -136,7 +136,7 @@ const handleOk = async (e) => {
 };
 
 function handleCancel() {
-  userStore.clearErrorMessage();
+  useStore.clearErrorMessage();
   open.value = false;
 }
 </script>

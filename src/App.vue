@@ -2,10 +2,10 @@
 import Nav from "@/components/Nav.vue";
 import { useDark } from "@vueuse/core";
 import { RouterView } from "vue-router";
-import { useUserStore } from "./stores/users";
+import { useruseStore } from "./stores/users";
 import { onMounted } from "vue";
 
-let useStore = useUserStore();
+let useStore = useruseStore();
 let isDark = useDark("false");
 
 onMounted(() => {
