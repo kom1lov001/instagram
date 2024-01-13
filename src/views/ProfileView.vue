@@ -1,9 +1,9 @@
 <script setup>
-import Timeline from "../components/Timeline.vue";
+import Profile from "../components/Profile.vue";
 </script>
 
 <template>
   <main>
-    <Timeline />
+    <Profile />
   </main>
 </template>

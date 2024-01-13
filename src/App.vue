@@ -1,14 +1,21 @@
 <script setup>
-import Nav from "@/components/Nav.vue";
+import { onMounted } from "vue";
+import Nav from "./components/Nav.vue";
+import { RouterView } from "vue-router";
+import { useUserStore } from "@/stores/counter";
+
+const userStore = useUserStore();
+
+onMounted(() => {
+  userStore.getUser();
+});
 </script>
 
 <template>
-  <div>
-    <header>
-      <Nav></Nav>
-    </header>
-  </div>
-  <!-- <router-view></router-view> -->
+  <main>
+    <Nav />
+    <RouterView />
+  </main>
 </template>
 
 <style scoped></style>
