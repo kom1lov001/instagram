@@ -5,10 +5,10 @@ import Nav from "@/components/Nav.vue";
 <template>
   <div>
     <header>
-      <Nav></Nav>
+      <!-- <Nav></Nav> -->
     </header>
   </div>
-  <!-- <router-view></router-view> -->
+  <router-view></router-view>
 </template>
 
 <style scoped></style>
